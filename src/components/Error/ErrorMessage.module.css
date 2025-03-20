@@ -1,0 +1,10 @@
+/* src/components/Error/ErrorMessage.module.css */
+
+.error {
+    font-size: 0.875rem; /* Smaller text for subtlety */
+    transition: opacity 0.3s ease;
+  }
+  
+  .error:empty {
+    opacity: 0;
+  }
