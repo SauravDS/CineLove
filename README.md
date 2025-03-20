@@ -235,4 +235,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ---
 
-Happy coding, and enjoy building CineLove for your special someone! If you have questions, feel free to open an issue or contact me at saurav_ds@pm.me
+Happy coding, and enjoy building CineLove for your special someone! If you have questions, feel free to open an issue or contact me at saurav_ds@pm.me !!
