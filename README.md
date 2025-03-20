@@ -1,4 +1,3 @@
-```markdown
 # CineLove
 
 CineLove is a web application designed to bring couples closer together by providing a synchronized movie-watching experience, no matter the distance between them. With a romantic theme, real-time video playback synchronization, and an integrated chat feature, CineLove recreates the intimacy of a shared movie night. Whether you're in a long-distance relationship or simply apart for the evening, CineLove makes every movie night special.
@@ -63,49 +62,6 @@ Couples in long-distance relationships or those who want to enjoy a movie night 
 
 - **Vercel:** Platform for hosting frontend and serverless functions.
 - **Custom Domain:** e.g., www.cinelove.app (purchased separately).
-
-## Project Structure
-
-```
-cinelove/
-├── .env.example                # Example environment variables
-├── .gitignore                 # Git ignore file
-├── package.json               # Project metadata and dependencies
-├── README.md                  # This file
-├── public/                    # Static assets
-│   ├── favicon.ico            # Website favicon
-│   ├── index.html             # Main HTML file
-│   ├── manifest.json          # Web app manifest
-│   ├── robots.txt             # Web crawler instructions
-│   └── assets/                # Static assets (images, SVGs)
-│       ├── logo.svg           # Heart-shaped film reel logo
-│       └── background.jpg     # Blurred couple silhouette
-├── src/                       # Frontend source code
-│   ├── components/            # Reusable React components
-│   ├── contexts/              # Context API for state management
-│   ├── hooks/                 # Custom React hooks
-│   ├── pages/                 # Page components
-│   ├── services/              # API and external service logic
-│   ├── utils/                 # Helper functions and utilities
-│   ├── App.jsx                # Main app component
-│   ├── index.jsx              # React entry point
-│   └── index.css              # Global styles with Tailwind
-├── server/                    # Backend source code
-│   ├── models/                # Mongoose schemas
-│   ├── routes/                # Express.js routes
-│   ├── services/              # Socket.IO and logging services
-│   ├── controllers/           # Route handlers
-│   ├── middleware/            # Authentication and rate-limiting
-│   ├── utils/                 # Backend utilities
-│   ├── .env                   # Environment variables (secret)
-│   ├── server.js              # Main server file
-│   └── package.json           # Server dependencies
-├── __tests__/                 # Test suite
-│   ├── unit/                  # Unit tests
-│   ├── integration/           # Integration tests
-│   └── e2e/                   # End-to-end tests
-└── tailwind.config.js         # Tailwind CSS configuration
-```
 
 ## Installation
 
