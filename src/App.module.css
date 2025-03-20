@@ -1,0 +1,12 @@
+/* src/App.module.css */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  /* Ensure main content has some breathing room */
+  .main {
+    padding-top: 4rem; /* Space below header */
+  }

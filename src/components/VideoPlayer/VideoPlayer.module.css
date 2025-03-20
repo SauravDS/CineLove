@@ -1,0 +1,36 @@
+/* src/components/VideoPlayer/VideoPlayer.module.css */
+
+.videoPlayer {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    position: relative;
+  }
+  
+  .seekBar {
+    width: 100%;
+    max-width: 300px;
+    height: 6px;
+    background: #F8BBD0; /* Rose pink */
+    border-radius: 3px;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .seekBar::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #C2185B; /* Deep rose */
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .seekBar::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #C2185B; /* Deep rose */
+    border-radius: 50%;
+    cursor: pointer;
+  }

@@ -1,0 +1,10 @@
+# robots.txt
+
+User-agent: *
+Disallow: /dashboard
+Disallow: /create
+Disallow: /join
+Disallow: /watch/
+Allow: /
+
+Sitemap: https://www.cinelove.app/sitemap.xml

@@ -1,0 +1,15 @@
+/* src/components/Forms/JoinRoomForm.module.css */
+
+.form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .input {
+    transition: border-color 0.3s ease;
+  }
+  
+  .input:focus {
+    border-color: #C2185B; /* Deep rose */
+    outline: none;
+  }

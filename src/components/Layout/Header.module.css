@@ -1,0 +1,24 @@
+/* src/components/Layout/Header.module.css */
+
+.header {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    transition: transform 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.05);
+  }
+  
+  .navLink {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .navLink:hover {
+    background-color: #C2185B; /* Deep rose */
+    color: #F8F8FF; /* Pale pink */
+  }

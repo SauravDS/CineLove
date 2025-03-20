@@ -1,0 +1,26 @@
+/* src/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'open-sans', sans-serif; /* Default font from Section 3.1.2 */
+  background-color: #F8F8FF; /* Pale pink from Section 3.1.1 */
+  color: #333; /* Readable default text color */
+}
+
+/* Accessibility: Ensure focus outlines are visible */
+button:focus, 
+input:focus, 
+a:focus {
+  outline: 2px solid #C2185B; /* Deep rose for focus, Section 3.1.1 */
+  outline-offset: 2px;
+}

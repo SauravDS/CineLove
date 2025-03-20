@@ -1,0 +1,15 @@
+/* src/components/Chat/UserList.module.css */
+
+.userList {
+    max-height: 120px;
+    overflow-y: auto;
+    border: 1px solid #F8BBD0; /* Rose pink border */
+  }
+  
+  .userList ul {
+    list-style: none;
+  }
+  
+  .userList li {
+    padding: 0.25rem 0;
+  } 

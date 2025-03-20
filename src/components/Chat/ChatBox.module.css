@@ -1,0 +1,27 @@
+/* src/components/Chat/ChatBox.module.css */
+
+.chatBox {
+    width: 100%;
+    max-width: 400px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .messages {
+    flex-grow: 1;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    overflow-y: auto;
+  }
+  
+  .input {
+    border-right: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input:focus {
+    border-color: #C2185B; /* Deep rose */
+  }
