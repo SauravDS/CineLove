@@ -1,0 +1,11 @@
+/* src/pages/WatchRoom.module.css */
+
+.watchRoom {
+    padding: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .watchRoom {
+      padding: 2rem;
+    }
+  }
