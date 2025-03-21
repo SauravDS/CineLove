@@ -1,0 +1,26 @@
+# Dependencies
+node_modules
+
+# Build outputs
+build
+server/build
+coverage
+server/coverage
+
+# Config files
+*.config.js
+*.json
+
+# Git and CI
+.git
+.github
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose.yml
+
+# Sensitive files
+.env
+server/.env
+server/serviceAccount.json
