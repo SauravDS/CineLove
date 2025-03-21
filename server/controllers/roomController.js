@@ -1,60 +1,40 @@
-const shortid = require('shortid');
 const Room = require('../models/Room');
 const logger = require('../services/loggerService');
 
-async function createRoom(req, res) {
-  const { videoUrl, host } = req.body;
-
-  if (!videoUrl || !host) {
-    logger.error('Create room failed: Video URL and host are required');
-    return res.status(400).json({ error: 'Video URL and host are required' });
-  }
-
+exports.createRoom = async (req, res) => {
   try {
-    const roomId = shortid.generate();
-    const room = new Room({
-      roomId,
-      videoUrl,
-      host,
-      users: [{ uid: host, displayName: 'Host' }],
-    });
-
+    const { videoUrl } = req.body;
+    const host = req.user.uid; // Use authenticated user from authMiddleware
+    if (!videoUrl) {
+      return res.status(400).json({ message: 'videoUrl is required' });
+    }
+    const room = new Room({ videoUrl, host, users: [{ uid: host }] });
     await room.save();
-    logger.info(`Room created: ${roomId}`);
-    res.status(201).json({ roomId, videoUrl, host });
+    logger.info(`Room created: ${room._id} by ${host}`);
+    res.status(201).json(room);
   } catch (error) {
-    logger.error(`Error creating room: ${error.message}`);
-    res.status(500).json({ error: 'Failed to create room' });
+    logger.error('Error creating room:', error);
+    res.status(500).json({ message: 'Server error' });
   }
-}
+};
 
-async function joinRoom(req, res) {
-  const { roomId } = req.params;
-  const { userId } = req.body;
-
-  if (!userId) {
-    logger.error('Join room failed: User ID is required');
-    return res.status(400).json({ error: 'User ID is required' });
-  }
-
+exports.joinRoom = async (req, res) => {
   try {
-    const room = await Room.findOne({ roomId });
+    const { roomId } = req.params;
+    const userId = req.user.uid; // Use authenticated user from authMiddleware
+    const room = await Room.findById(roomId);
     if (!room) {
-      logger.error(`Room not found: ${roomId}`);
-      return res.status(404).json({ error: 'Room not found' });
+      logger.warn(`Room not found for join: ${roomId}`);
+      return res.status(404).json({ message: 'Room not found' });
     }
-
-    if (!room.users.find((u) => u.uid === userId)) {
-      room.users.push({ uid: userId, displayName: `User_${userId.slice(0, 4)}` });
+    if (!room.users.some(user => user.uid === userId)) {
+      room.users.push({ uid: userId });
       await room.save();
-      logger.info(`User ${userId} joined room: ${roomId}`);
+      logger.info(`User ${userId} joined room: ${room._id}`);
     }
-
-    res.status(200).json(room);
+    res.json(room);
   } catch (error) {
-    logger.error(`Error joining room: ${error.message}`);
-    res.status(500).json({ error: 'Failed to join room' });
+    logger.error('Error joining room:', error);
+    res.status(500).json({ message: 'Server error' });
   }
-}
-
-module.exports = { createRoom, joinRoom };
+};
